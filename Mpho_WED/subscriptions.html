@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+  <title>Subscriptions · Bloom & Bean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:#F5F1E8; color:#1e1a16; line-height:1.6; }
+    h1,h2,h3,h4,.nav-links a,.btn { font-family:'Poppins',sans-serif; font-weight:600; }
+    h1 { font-size:2.8rem; letter-spacing:-0.02em; }
+    h2 { font-size:2.2rem; margin-bottom:0.75rem; }
+    .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
+    .btn-terracotta { background:#D97941; color:#fff; border:none; padding:0.9rem 2.5rem; border-radius:60px; font-weight:600; text-decoration:none; display:inline-block; transition:0.2s; cursor:pointer; }
+    .btn-terracotta:hover { background:#c16a35; transform:translateY(-2px); }
+    .btn-outline { background:transparent; color:#3C2415; border:2px solid #D97941; padding:0.7rem 2rem; border-radius:60px; font-weight:600; text-decoration:none; display:inline-block; transition:0.2s; cursor:pointer; }
+    .btn-outline:hover { background:#D97941; color:#fff; }
+    header { position:sticky; top:0; z-index:100; background:#F5F1E8; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:0.75rem 0; border-bottom:1px solid rgba(60,36,21,0.08); }
+    .nav-wrapper { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .logo a { font-family:'Poppins',sans-serif; font-weight:700; font-size:1.6rem; color:#3C2415; text-decoration:none; letter-spacing:-0.5px; }
+    .logo i { color:#8A9A8F; margin-right:6px; }
+    .nav-links { display:flex; gap:1.5rem; align-items:center; flex-wrap:wrap; }
+    .nav-links a { color:#2b1d14; text-decoration:none; font-weight:500; font-size:1rem; transition:0.2s; padding:0.3rem 0; border-bottom:2px solid transparent; }
+    .nav-links a:hover, .nav-links a.active { border-bottom-color:#D97941; color:#3C2415; }
+    .cart-icon { font-size:1.3rem; color:#3C2415; margin-left:0.25rem; }
+    .hamburger { display:none; font-size:1.8rem; background:none; border:none; color:#3C2415; cursor:pointer; }
+
+    /* Subscriptions hero */
+    .sub-hero { padding:2rem 0 1.5rem; display:flex; flex-wrap:wrap; gap:2rem; align-items:center; }
+    .sub-hero-copy { flex:1 1 350px; }
+    .sub-hero-image { flex:1 1 260px; }
+    .sub-hero-image img { width:100%; height:260px; object-fit:cover; border-radius:30px; display:block; }
+
+    /* Plan cards */
+    .plan-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2rem; margin:2.5rem 0; }
+    .plan-card { background:#fff; border-radius:32px; padding:2rem 1.8rem; box-shadow:0 4px 20px rgba(0,0,0,0.03); transition:0.3s; border:1px solid rgba(60,36,21,0.06); display:flex; flex-direction:column; }
+    .plan-card:hover { transform:translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,0.06); }
+    .plan-card.popular { border:2px solid #D97941; position:relative; }
+    .plan-card.popular::before { content:'Most popular'; position:absolute; top:-12px; right:20px; background:#D97941; color:#fff; padding:0.2rem 1.2rem; border-radius:60px; font-size:0.75rem; font-weight:600; letter-spacing:0.3px; }
+    .plan-card h3 { font-size:1.6rem; margin-bottom:0.3rem; }
+    .plan-card .price { font-size:2.8rem; font-weight:700; color:#3C2415; margin:0.5rem 0; }
+    .plan-card .price span { font-size:1rem; font-weight:400; color:#6b5a4a; }
+    .plan-card .features { list-style:none; margin:1.5rem 0; flex-grow:1; }
+    .plan-card .features li { padding:0.4rem 0; display:flex; align-items:center; gap:0.6rem; border-bottom:1px solid rgba(60,36,21,0.04); }
+    .plan-card .features li i { color:#8A9A8F; width:1.2rem; }
+    .plan-card .btn-terracotta { width:100%; text-align:center; padding:0.8rem; }
+    .plan-card .btn-outline { width:100%; text-align:center; padding:0.7rem; }
+
+    /* Newsletter section */
+    .newsletter { background:#e7dfd2; border-radius:40px; padding:2.5rem; margin:2.5rem 0; text-align:center; }
+    .newsletter h3 { font-size:1.8rem; }
+    .newsletter .input-group { display:flex; flex-wrap:wrap; justify-content:center; gap:0.8rem; margin-top:1.2rem; }
+    .newsletter input { padding:0.8rem 1.5rem; border-radius:60px; border:1px solid #d4cbbc; background:#fff; min-width:240px; font-family:'Inter',sans-serif; }
+    .newsletter .btn-terracotta { padding:0.8rem 2rem; }
+
+    /* Footer */
+    footer { background:#3C2415; color:#f0e7dc; padding:2rem 0 1rem; margin-top:2.5rem; border-radius:40px 40px 0 0; }
+    footer .container { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; }
+    footer a { color:#e4d6c8; margin:0 0.5rem; }
+    footer .social i { font-size:1.4rem; margin:0 0.3rem; }
+
+    @media (max-width:768px) {
+      .hamburger { display:block; }
+      .nav-links { display:none; width:100%; flex-direction:column; align-items:start; padding:1rem 0 0.5rem; gap:0.7rem; }
+      .nav-links.open { display:flex; }
+      .sub-hero h1 { font-size:2.2rem; }
+      .plan-grid { grid-template-columns:1fr; max-width:400px; margin-left:auto; margin-right:auto; }
+      .newsletter input { min-width:100%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrapper">
+    <div class="logo"><a href="index.html"><i class="fas fa-seedling"></i> Bloom & Bean</a></div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="product.html">Product</a>
+      <a href="subscriptions.html" class="active">Subscriptions</a>
+      <a href="workshop.html">Workshop</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="functionality.html" style="background:#8A9A8F20; padding:0.2rem 1rem; border-radius:40px;">⚙️</a>
+      <span class="cart-icon"><i class="fas fa-shopping-bag"></i></span>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="sub-hero">
+    <div class="sub-hero-copy">
+      <h1>☕ Fresh beans, <br>delivered monthly.</h1>
+      <p>Choose your perfect subscription and save 15% on every bag. Cancel or pause anytime.</p>
+    </div>
+    <div class="sub-hero-image">
+      <img src="images/subscription-beans.jpg" alt="Coffee beans" />
+    </div>
+  </section>
+
+  <!-- Subscription Plans -->
+  <div class="plan-grid">
+    <!-- Starter -->
+    <div class="plan-card">
+      <h3>Starter</h3>
+      <div class="price">R165 <span>/ month</span></div>
+      <ul class="features">
+        <li><i class="fas fa-check"></i> 1 bag (250g) per month</li>
+        <li><i class="fas fa-check"></i> Single-origin selection</li>
+        <li><i class="fas fa-check"></i> Free delivery (JHB)</li>
+        <li><i class="fas fa-check"></i> Brew guide included</li>
+      </ul>
+      <button class="btn-terracotta" onclick="alert('Starter subscription selected! (demo)')">Subscribe now</button>
+    </div>
+
+    <!-- Explorer (Popular) -->
+    <div class="plan-card popular">
+      <h3>Explorer</h3>
+      <div class="price">R310 <span>/ month</span></div>
+      <ul class="features">
+        <li><i class="fas fa-check"></i> 2 bags (250g each) per month</li>
+        <li><i class="fas fa-check"></i> Rotating origins</li>
+        <li><i class="fas fa-check"></i> Free delivery nationwide</li>
+        <li><i class="fas fa-check"></i> Tasting notes & brew guide</li>
+        <li><i class="fas fa-check"></i> Early access to new roasts</li>
+      </ul>
+      <button class="btn-terracotta" onclick="alert('Explorer subscription selected! (demo)')">Subscribe now</button>
+    </div>
+
+    <!-- Connoisseur -->
+    <div class="plan-card">
+      <h3>Connoisseur</h3>
+      <div class="price">R580 <span>/ month</span></div>
+      <ul class="features">
+        <li><i class="fas fa-check"></i> 4 bags (250g each) per month</li>
+        <li><i class="fas fa-check"></i> Limited micro-lots</li>
+        <li><i class="fas fa-check"></i> Free express delivery</li>
+        <li><i class="fas fa-check"></i> Exclusive virtual cupping</li>
+        <li><i class="fas fa-check"></i> Personalised roast profile</li>
+      </ul>
+      <button class="btn-terracotta" onclick="alert('Connoisseur subscription selected! (demo)')">Subscribe now</button>
+    </div>
+  </div>
+
+  <!-- Extra: flexible add-on -->
+  <div style="background:#fff; border-radius:30px; padding:1.5rem 2rem; margin:1.5rem 0; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; border:1px solid rgba(60,36,21,0.06);">
+    <div><i class="fas fa-gift" style="color:#8A9A8F; font-size:1.8rem; margin-right:0.8rem;"></i> <strong>Gift a subscription</strong> — surprise a coffee lover.</div>
+    <a href="#" class="btn-outline" style="padding:0.5rem 2rem;">Learn more</a>
+  </div>
+
+  <!-- Newsletter signup (lead gen) -->
+  <div class="newsletter">
+    <h3>📬 Get brewing guides & first access</h3>
+    <p style="margin-top:0.3rem;">Join our newsletter for exclusive recipes, origin stories, and subscriber-only offers.</p>
+    <div class="input-group">
+      <input type="email" placeholder="Your email address" required>
+      <button class="btn-terracotta" onclick="alert('Thanks for signing up! (demo)')">Sign up <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Bloom & Bean · Maboneng, JHB</div>
+    <div class="social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile hamburger toggle
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

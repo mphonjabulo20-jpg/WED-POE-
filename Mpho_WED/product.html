@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products · Bloom & Bean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:#F5F1E8; color:#1e1a16; line-height:1.6; }
+    h1,h2,h3,h4,.nav-links a,.btn { font-family:'Poppins',sans-serif; font-weight:600; }
+    h2 { font-size:2.2rem; margin-bottom:0.75rem; }
+    .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
+    .btn-terracotta { background:#D97941; color:#fff; border:none; padding:0.5rem 1.2rem; border-radius:60px; font-weight:600; cursor:pointer; transition:0.2s; }
+    .btn-terracotta:hover { background:#c16a35; }
+    header { position:sticky; top:0; z-index:100; background:#F5F1E8; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:0.75rem 0; border-bottom:1px solid rgba(60,36,21,0.08); }
+    .nav-wrapper { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .logo a { font-family:'Poppins',sans-serif; font-weight:700; font-size:1.6rem; color:#3C2415; text-decoration:none; }
+    .logo i { color:#8A9A8F; margin-right:6px; }
+    .nav-links { display:flex; gap:1.5rem; align-items:center; flex-wrap:wrap; }
+    .nav-links a { color:#2b1d14; text-decoration:none; font-weight:500; font-size:1rem; padding:0.3rem 0; border-bottom:2px solid transparent; }
+    .nav-links a:hover, .nav-links a.active { border-bottom-color:#D97941; color:#3C2415; }
+    .cart-icon { font-size:1.3rem; color:#3C2415; }
+    .hamburger { display:none; font-size:1.8rem; background:none; border:none; color:#3C2415; cursor:pointer; }
+    .shop-layout { display:flex; flex-wrap:wrap; gap:2rem; margin:2rem 0; }
+    .shop-filters { flex:0 0 200px; background:#fff; padding:1.5rem; border-radius:20px; height:fit-content; }
+    .shop-filters h4 { margin-bottom:0.5rem; }
+    .filter-group { margin-bottom:1.2rem; }
+    .filter-group label { display:block; font-size:0.9rem; margin:0.2rem 0; }
+    .shop-products { flex:1; }
+    .search-bar { width:100%; padding:0.7rem 1rem; border-radius:60px; border:1px solid #d4cbbc; background:#fff; margin-bottom:1.5rem; font-family:'Inter',sans-serif; }
+    .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:2rem; }
+    .product-item { background:#fff; border-radius:20px; padding:1.2rem; box-shadow:0 2px 10px rgba(0,0,0,0.02); transition:0.2s; }
+    .product-item:hover { transform:translateY(-4px); }
+    .product-img { background:#e8e0d4; height:140px; border-radius:16px; overflow:hidden; display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem; }
+    .product-img img { width:100%; height:100%; object-fit:cover; display:block; }
+    .product-title { font-weight:600; }
+    .product-price { font-weight:600; color:#3C2415; }
+    footer { background:#3C2415; color:#f0e7dc; padding:2rem 0 1rem; margin-top:2.5rem; border-radius:40px 40px 0 0; }
+    footer .container { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; }
+    footer a { color:#e4d6c8; margin:0 0.5rem; }
+    footer .social i { font-size:1.4rem; margin:0 0.3rem; }
+    @media (max-width:768px) { .hamburger { display:block; } .nav-links { display:none; width:100%; flex-direction:column; align-items:start; padding:1rem 0 0.5rem; gap:0.7rem; } .nav-links.open { display:flex; } .shop-filters { flex:1 1 100%; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav-wrapper">
+    <div class="logo"><a href="index.html"><i class="fas fa-seedling"></i> Bloom & Bean</a></div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="product.html" class="active">Product</a>
+      <a href="subscriptions.html">Subscriptions</a>
+      <a href="workshop.html">Workshop</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="functionality.html" style="background:#8A9A8F20; padding:0.2rem 1rem; border-radius:40px;">⚙️</a>
+      <span class="cart-icon"><i class="fas fa-shopping-bag"></i></span>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <h2>Our coffees</h2>
+  <div class="shop-layout">
+    <div class="shop-filters">
+      <h4>Filter</h4>
+      <div class="filter-group"><label><input type="checkbox"> Ethiopia</label><label><input type="checkbox"> Rwanda</label></div>
+      <div class="filter-group"><label>Price</label><label><input type="radio" name="price"> All</label><label><input type="radio" name="price"> Under R200</label></div>
+    </div>
+    <div class="shop-products">
+      <input class="search-bar" type="text" placeholder="Search beans, origin...">
+      <div class="product-grid">
+        <div class="product-item"><div class="product-img"><img src="images/product-ethiopia.jpg" alt="Ethiopia coffee" /></div><div class="product-title">Yirgacheffe</div><div class="product-price">R185</div><button class="btn-terracotta">Add</button></div>
+        <div class="product-item"><div class="product-img"><img src="images/product-rwanda.jpg" alt="Rwanda coffee" /></div><div class="product-title">Lake Kivu</div><div class="product-price">R175</div><button class="btn-terracotta">Add</button></div>
+        <div class="product-item"><div class="product-img"><img src="images/product-sidamo.jpg" alt="Sidamo coffee" /></div><div class="product-title">Sidamo</div><div class="product-price">R195</div><button class="btn-terracotta">Add</button></div>
+        <div class="product-item"><div class="product-img"><img src="images/product-nyamasheke.jpg" alt="Nyamasheke coffee" /></div><div class="product-title">Nyamasheke</div><div class="product-price">R190</div><button class="btn-terracotta">Add</button></div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer><div class="container"><div>© 2026 Bloom & Bean · Maboneng, JHB</div><div class="social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div></div></footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click', function(){ document.getElementById('navLinks').classList.toggle('open'); });
+</script>
+</body>
+</html>

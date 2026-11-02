@@ -1,0 +1,115 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Bloom & Bean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:#F5F1E8; color:#1e1a16; line-height:1.6; }
+    h1,h2,h3,h4,.nav-links a,.btn { font-family:'Poppins',sans-serif; font-weight:600; }
+    h1 { font-size:2.8rem; letter-spacing:-0.02em; }
+    h2 { font-size:2.2rem; margin-bottom:0.75rem; }
+    .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
+    .btn-terracotta { background:#D97941; color:#fff; border:none; padding:0.9rem 2.5rem; border-radius:60px; font-weight:600; text-decoration:none; display:inline-block; transition:0.2s; }
+    .btn-terracotta:hover { background:#c16a35; }
+    header { position:sticky; top:0; z-index:100; background:#F5F1E8; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:0.75rem 0; border-bottom:1px solid rgba(60,36,21,0.08); }
+    .nav-wrapper { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .logo a { font-family:'Poppins',sans-serif; font-weight:700; font-size:1.6rem; color:#3C2415; text-decoration:none; }
+    .logo i { color:#8A9A8F; margin-right:6px; }
+    .nav-links { display:flex; gap:1.5rem; align-items:center; flex-wrap:wrap; }
+    .nav-links a { color:#2b1d14; text-decoration:none; font-weight:500; font-size:1rem; padding:0.3rem 0; border-bottom:2px solid transparent; }
+    .nav-links a:hover, .nav-links a.active { border-bottom-color:#D97941; color:#3C2415; }
+    .cart-icon { font-size:1.3rem; color:#3C2415; }
+    .hamburger { display:none; font-size:1.8rem; background:none; border:none; color:#3C2415; cursor:pointer; }
+    .about-hero { padding:2.5rem 0 1.5rem; }
+    .about-hero h1 { font-size:3rem; margin-bottom:0.5rem; }
+    .about-hero .subhead { font-size:1.2rem; color:#3C2415; opacity:0.8; max-width:700px; }
+    .story-grid { display:flex; flex-wrap:wrap; gap:2.5rem; margin:2rem 0 3rem; }
+    .story-text { flex:2; min-width:280px; }
+    .story-text p { margin-bottom:1.2rem; }
+    .story-image { flex:1; min-height:240px; background:#d9d0c0; border-radius:40px; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative; }
+    .story-image img { width:100%; height:100%; object-fit:cover; display:block; }
+    .story-image .caption { position:absolute; left:20px; bottom:18px; background:rgba(60,36,21,0.55); color:#fff; padding:0.6rem 0.9rem; border-radius:999px; font-size:0.85rem; }
+    .mv-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:2rem; margin:2rem 0; }
+    .mv-card { background:#fff; padding:2rem 1.5rem; border-radius:30px; border-left:6px solid #8A9A8F; }
+    .mv-card h3 { display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem; }
+    .mv-card i { color:#D97941; font-size:1.6rem; }
+    .sourcing { background:#e7dfd2; border-radius:40px; padding:2rem 2rem 2.5rem; margin:2.5rem 0; }
+    .sourcing-steps { display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:space-between; }
+    .step { flex:1 1 140px; background:rgba(255,255,255,0.6); backdrop-filter:blur(2px); border-radius:60px; padding:1rem 1.5rem; text-align:center; font-weight:500; border:1px solid rgba(60,36,21,0.08); }
+    .step i { color:#3C2415; margin-right:8px; }
+    footer { background:#3C2415; color:#f0e7dc; padding:2rem 0 1rem; margin-top:2.5rem; border-radius:40px 40px 0 0; }
+    footer .container { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; }
+    footer a { color:#e4d6c8; margin:0 0.5rem; }
+    footer .social i { font-size:1.4rem; margin:0 0.3rem; }
+    @media (max-width:768px) { .hamburger { display:block; } .nav-links { display:none; width:100%; flex-direction:column; align-items:start; padding:1rem 0 0.5rem; gap:0.7rem; } .nav-links.open { display:flex; } .about-hero h1 { font-size:2.2rem; } .step { flex:1 1 100%; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav-wrapper">
+    <div class="logo"><a href="index.html"><i class="fas fa-seedling"></i> Bloom & Bean</a></div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="product.html">Product</a>
+      <a href="subscriptions.html">Subscriptions</a>
+      <a href="workshop.html">Workshop</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="functionality.html" style="background:#8A9A8F20; padding:0.2rem 1rem; border-radius:40px;">⚙️</a>
+      <span class="cart-icon"><i class="fas fa-shopping-bag"></i></span>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="about-hero">
+    <h1>More than coffee.</h1>
+    <p class="subhead">We're a community of roasters, farmers, and baristas who believe in ethical sourcing, exceptional flavour, and the power of a great cup.</p>
+  </section>
+  <div class="story-grid">
+    <div class="story-text">
+      <p><strong>Bloom & Bean Artisan Roastery</strong> was founded in 2021 in the heart of Maboneng, Johannesburg. What started as a weekend market stall — serving single-origin pour-overs to curious locals — quickly grew into a flagship cafe and roastery by 2024.</p>
+      <p>We work directly with smallholder farmers in <strong>Ethiopia</strong> and <strong>Rwanda</strong>, building long-term relationships that go beyond fair trade. Our beans are hand-picked, sun-dried, and shipped with full traceability.</p>
+      <p>Every roast is crafted in small batches to highlight the unique terroir of each origin. We believe coffee should be both delicious and just — for the farmer, the barista, and the drinker.</p>
+    </div>
+    <div class="story-image">
+      <img src="images/about-roastery.jpg" alt="Coffee Roastery" />
+      <div class="caption">Direct-trade since 2021</div>
+    </div>
+  </div>
+  <div class="mv-grid">
+    <div class="mv-card"><h3><i class="fas fa-bullseye"></i> Mission</h3><p>To make ethically sourced, freshly roasted coffee accessible while uplifting local farmers and baristas through education and fair wages.</p></div>
+    <div class="mv-card" style="border-left-color:#D97941;"><h3><i class="fas fa-eye"></i> Vision</h3><p>To become Gauteng's most trusted sustainable coffee brand by 2028 — setting the standard for transparency, quality, and community impact.</p></div>
+  </div>
+  <div class="sourcing">
+    <h2>🌱 From farm to cup</h2>
+    <p style="margin-bottom:1.5rem;">Our sourcing process is built on direct relationships, quality control, and respect for the land.</p>
+    <div class="sourcing-steps">
+      <div class="step"><i class="fas fa-seedling"></i> Direct-trade</div>
+      <div class="step"><i class="fas fa-handshake"></i> Farmer partnerships</div>
+      <div class="step"><i class="fas fa-sun"></i> Sun-dried beans</div>
+      <div class="step"><i class="fas fa-fire"></i> Small-batch roast</div>
+      <div class="step"><i class="fas fa-mug-hot"></i> Fresh delivery</div>
+    </div>
+    <p style="margin-top:1.5rem; font-size:0.95rem; opacity:0.8;"><i class="fas fa-tag" style="color:#8A9A8F;"></i> Our target audience: coffee lovers from 18 to 80 — from curious beginners to seasoned connoisseurs.</p>
+  </div>
+  <div style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:space-between; align-items:center; padding:0.5rem 0 1rem;">
+    <div><i class="fas fa-award" style="color:#8A9A8F; font-size:1.8rem;"></i> Specialty Coffee Association member</div>
+    <div><i class="fas fa-users" style="color:#8A9A8F; font-size:1.8rem;"></i> 15+ local baristas trained</div>
+    <div><i class="fas fa-globe-africa" style="color:#8A9A8F; font-size:1.8rem;"></i> 100% African origin</div>
+  </div>
+</main>
+<footer><div class="container"><div>© 2026 Bloom & Bean · Maboneng, JHB</div><div class="social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div></div></footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click', function(){ document.getElementById('navLinks').classList.toggle('open'); });
+</script>
+</body>
+</html>

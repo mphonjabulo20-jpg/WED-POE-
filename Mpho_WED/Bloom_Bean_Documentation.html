@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom & Bean - Project Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 40px 20px;
+      background: #f7f3ee;
+      color: #1f1a17;
+    }
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px 50px;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+    h1, h2, h3 {
+      color: #3c2415;
+      margin-top: 24px;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 24px;
+      border-bottom: 2px solid #e8d9c8;
+      padding-bottom: 8px;
+    }
+    p, li {
+      font-size: 16px;
+    }
+    ul, ol {
+      padding-left: 22px;
+    }
+    .meta {
+      color: #665b52;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+    .section {
+      margin-top: 18px;
+    }
+    .small {
+      font-size: 14px;
+      color: #665b52;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #e2d8cc;
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f4e9df;
+    }
+    .note {
+      background: #fff5eb;
+      border-left: 4px solid #d97941;
+      padding: 12px 14px;
+      margin-top: 14px;
+    }
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; border: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Bloom & Bean</h1>
+    <div class="meta">Project documentation | October 30, 2026</div>
+
+    <div class="section">
+      <h2>1. Overview</h2>
+      <p>Bloom & Bean is a coffee brand website created as a front-end project using HTML, CSS, and JavaScript. The website presents the brand, highlights coffee products, offers subscriptions, promotes workshops, and includes contact and functionality sections.</p>
+      <p>The design uses warm earthy colours such as cream, brown, terracotta, and sage green to reflect a premium artisan coffee identity.</p>
+    </div>
+
+    <div class="section">
+      <h2>2. Project Goal</h2>
+      <ul>
+        <li>Promote the Bloom & Bean brand</li>
+        <li>Display coffee products</li>
+        <li>Encourage subscription sign-ups</li>
+        <li>Present workshop opportunities</li>
+        <li>Share coffee blog content</li>
+        <li>Allow users to contact the business</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. Technologies Used</h2>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Google Fonts</li>
+        <li>Font Awesome Icons</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>4. Project Files</h2>
+      <table>
+        <tr>
+          <th>File</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>index.html</td>
+          <td>Main landing page for the website.</td>
+        </tr>
+        <tr>
+          <td>about.html</td>
+          <td>Brand story, mission, vision, and sourcing information.</td>
+        </tr>
+        <tr>
+          <td>product.html</td>
+          <td>Shows available coffee products and shop layout.</td>
+        </tr>
+        <tr>
+          <td>subscriptions.html</td>
+          <td>Displays monthly coffee subscription plans.</td>
+        </tr>
+        <tr>
+          <td>workshop.html</td>
+          <td>Workshop booking and registration page.</td>
+        </tr>
+        <tr>
+          <td>blog.html</td>
+          <td>Article cards and coffee-related blog content.</td>
+        </tr>
+        <tr>
+          <td>contact.html</td>
+          <td>Contact form and business contact details.</td>
+        </tr>
+        <tr>
+          <td>functionality.html</td>
+          <td>Interactive demo page with search, filter, cart, and dark mode features.</td>
+        </tr>
+        <tr>
+          <td>style.css</td>
+          <td>Shared CSS for the website styling.</td>
+        </tr>
+        <tr>
+          <td>script.js</td>
+          <td>Interactivity such as mobile menus and demo alerts.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>5. Website Structure</h2>
+      <p>The website includes a consistent navigation bar across all pages:</p>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Product</li>
+        <li>Subscriptions</li>
+        <li>Workshop</li>
+        <li>Blog</li>
+        <li>Contact</li>
+      </ul>
+      <p>Each page follows the same brand identity and uses a responsive layout for mobile devices.</p>
+    </div>
+
+    <div class="section">
+      <h2>6. Design Style</h2>
+      <p>The site uses a premium coffee brand aesthetic. The visual design includes:</p>
+      <ul>
+        <li>Warm cream backgrounds</li>
+        <li>Dark brown typography</li>
+        <li>Terracotta, orange accent buttons</li>
+        <li>Rounded cards and borders</li>
+        <li>Soft shadows and clean spacing</li>
+      </ul>
+      <p>This design creates a natural and premium café feel.</p>
+    </div>
+
+    <div class="section">
+      <h2>7. HTML Structure</h2>
+      <p>Each page is built with standard semantic elements such as:</p>
+      <ul>
+        <li>header</li>
+        <li>nav</li>
+        <li>main</li>
+        <li>section</li>
+        <li>footer</li>
+      </ul>
+      <p>These elements improve readability, structure, and accessibility.</p>
+    </div>
+
+    <div class="section">
+      <h2>8. CSS Features</h2>
+      <p>The CSS defines the visual identity of the entire project. It includes:</p>
+      <ul>
+        <li>a reset for margin/padding</li>
+        <li>body styling and fonts</li>
+        <li>button styles</li>
+        <li>navigation layout</li>
+        <li>card layouts</li>
+        <li>mobile responsive media queries</li>
+      </ul>
+      <p>The button class `.btn-terracotta` is the main call-to-action style used throughout the site.</p>
+    </div>
+
+    <div class="section">
+      <h2>9. JavaScript Functionality</h2>
+      <p>The `script.js` file manages front-end interactions:</p>
+      <ul>
+        <li>Hamburger menu toggle on smaller screens</li>
+        <li>Highlight active page in navigation</li>
+        <li>Prevent form reload on submit</li>
+        <li>Display demo alert messages</li>
+        <li>Show “subscription selected” confirmation prompts</li>
+      </ul>
+      <p>All interactions are client-side demos and do not connect to a real backend.</p>
+    </div>
+
+    <div class="section">
+      <h2>10. Page-by-Page Summary</h2>
+
+      <h3>10.1 Home Page</h3>
+      <p>The home page introduces the brand and includes a hero section, product presentation, and call-to-action buttons.</p>
+
+      <h3>10.2 About Page</h3>
+      <p>Explains the business story, mission, vision, and ethical sourcing practices.</p>
+
+      <h3>10.3 Product Page</h3>
+      <p>Lists coffee products with titles, pricing, and add-to-cart buttons.</p>
+
+      <h3>10.4 Subscriptions Page</h3>
+      <p>Contains subscription plans with monthly pricing and email newsletter signup.</p>
+
+      <h3>10.5 Workshop Page</h3>
+      <p>Allows visitors to choose a workshop date and submit a booking request.</p>
+
+      <h3>10.6 Blog Page</h3>
+      <p>Displays coffee blog cards and brewing tips.</p>
+
+      <h3>10.7 Contact Page</h3>
+      <p>Contains contact details and a message form.</p>
+
+      <h3>10.8 Functionality Page</h3>
+      <p>Shows a more advanced interactive demo with cart, filters, search, and theme management.</p>
+    </div>
+
+    <div class="section">
+      <h2>11. Responsiveness</h2>
+      <p>The project is designed to be mobile-friendly. Media queries adjust the layout for smaller screens by:</p>
+      <ul>
+        <li>collapsing the desktop navigation into a hamburger menu</li>
+        <li>stacking content into single columns</li>
+        <li>adjusting spacing and card widths</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>12. Strengths of the Project</h2>
+      <ul>
+        <li>Clean and professional layout</li>
+        <li>Consistent branding throughout the site</li>
+        <li>Simple and responsive design</li>
+        <li>Practical front-end interactivity</li>
+        <li>Clear marketing structure for a coffee business</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>13. Possible Improvements</h2>
+      <ul>
+        <li>Connect forms to a real backend or email service</li>
+        <li>Add a real shopping cart and checkout</li>
+        <li>Create product detail pages</li>
+        <li>Implement database-driven subscriptions and bookings</li>
+        <li>Add user authentication and admin panel</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>14. Conclusion</h2>
+      <p>Bloom & Bean is a static website designed for a premium coffee business. It combines branding, product marketing, and simple interactivity in one cohesive web experience. The project is a strong front-end demo for a coffee brand and can be expanded into a larger e-commerce or booking platform in the future.</p>
+    </div>
+
+    <div class="note">
+      <strong>Note:</strong> This document has been prepared as a printable HTML file so it can easily be saved as a PDF from the browser using Print > Save as PDF.
+    </div>
+  </div>
+</body>
+</html>
